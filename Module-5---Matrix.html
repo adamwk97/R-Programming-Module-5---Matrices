@@ -1,0 +1,43 @@
+<h1 id="module-5---matrices">Module 5 - Matrices</h1>
+<p>&quot;Your Assignment: Find the value of inverse of a matrix, determinant of a matrix by using the following values:&quot;</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(MASS)
+
+x &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(-<span class="dv">2</span>,<span class="dv">2</span>,-<span class="dv">3</span>,-<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">0</span>,-<span class="dv">1</span>),<span class="dv">3</span>,<span class="dv">3</span>)
+A=<span class="kw">matrix</span>(<span class="dv">1</span>:<span class="dv">100</span>, <span class="dt">nrow=</span><span class="dv">10</span>) 
+B=<span class="kw">matrix</span>(<span class="dv">1</span>:<span class="dv">10000</span>, <span class="dt">nrow=</span><span class="dv">100</span>)
+<span class="kw">det</span>(A)</code></pre>
+<pre><code>[1] 0</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">det</span>(B)</code></pre>
+<pre><code>[1] 0</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">A[<span class="dv">1</span>:<span class="dv">5</span>,<span class="dv">1</span>:<span class="dv">5</span>]</code></pre>
+<pre><code>     [,1] [,2] [,3] [,4] [,5]
+[1,]    1   11   21   31   41
+[2,]    2   12   22   32   42
+[3,]    3   13   23   33   43
+[4,]    4   14   24   34   44
+[5,]    5   15   25   35   45</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">B[<span class="dv">1</span>:<span class="dv">5</span>,<span class="dv">1</span>:<span class="dv">5</span>]</code></pre>
+<pre><code>     [,1] [,2] [,3] [,4] [,5]
+[1,]    1  101  201  301  401
+[2,]    2  102  202  302  402
+[3,]    3  103  203  303  403
+[4,]    4  104  204  304  404
+[5,]    5  105  205  305  405</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">invA =<span class="st"> </span><span class="kw">ginv</span>(A)
+invB =<span class="st"> </span><span class="kw">ginv</span>(B)
+
+invA[<span class="dv">1</span>:<span class="dv">5</span>,<span class="dv">1</span>:<span class="dv">5</span>]</code></pre>
+<pre><code>             [,1]         [,2]         [,3]         [,4]          [,5]
+[1,] -0.021024793 -0.016473829 -0.011922865 -0.007371901 -0.0028209366
+[2,] -0.017564738 -0.013755739 -0.009946740 -0.006137741 -0.0023287420
+[3,] -0.014104683 -0.011037649 -0.007970615 -0.004903581 -0.0018365473
+[4,] -0.010644628 -0.008319559 -0.005994490 -0.003669421 -0.0013443526
+[5,] -0.007184573 -0.005601469 -0.004018365 -0.002435262 -0.0008521579</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">invB[<span class="dv">1</span>:<span class="dv">5</span>,<span class="dv">1</span>:<span class="dv">5</span>]</code></pre>
+<pre><code>              [,1]          [,2]          [,3]          [,4]          [,5]
+[1,] -2.364709e-05 -2.317057e-05 -2.269406e-05 -2.221754e-05 -2.174102e-05
+[2,] -2.328939e-05 -2.282007e-05 -2.235075e-05 -2.188144e-05 -2.141212e-05
+[3,] -2.293168e-05 -2.246956e-05 -2.200745e-05 -2.154534e-05 -2.108322e-05
+[4,] -2.257397e-05 -2.211906e-05 -2.166415e-05 -2.120923e-05 -2.075432e-05
+[5,] -2.221627e-05 -2.176855e-05 -2.132084e-05 -2.087313e-05 -2.042542e-05</code></pre>
+<p>The determinant in both of these matrices is 0, therefore the inverses should be undefined, however the function 'ginv' still provided inverses andI am unsure how.</p>
